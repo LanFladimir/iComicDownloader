@@ -2,15 +2,11 @@ package util;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class ImgSaver {
-    static Runtime rt;
     static ImgSaverImpl imgSaverImpl;
     static File comicDir;
     //static String savePath = ;
@@ -18,26 +14,9 @@ public class ImgSaver {
     public ImgSaver(File dir, ImgSaverImpl imgSaver) {
         imgSaverImpl = imgSaver;
         comicDir = dir;
-        init();
-    }
-
-    static void init() {
-        rt = Runtime.getRuntime();
-        System.out.println(System.getProperty("user.dir"));
     }
 
     public void saveImage(String imgCod, String imgUrl) {
-        /*try {
-            rt.exec("cmd.exe /c cd ./imgs");
-            rt.exec("ffmpeg -i " + imgUrl + " " + imgCod + ".jpeg");
-            System.out.println("保存成功!");
-            imgSaverImpl.imgDownCall(true);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("保存失败!");
-            imgSaverImpl.imgDownCall(false);
-        }*/
-
         try {
             URL url = new URL(imgUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -61,7 +40,4 @@ public class ImgSaver {
         }
     }
 
-    public static void exit() {
-        rt.exit(0);
-    }
 }
