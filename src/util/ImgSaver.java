@@ -8,15 +8,12 @@ import java.net.URL;
 
 public class ImgSaver {
     static ImgSaverImpl imgSaverImpl;
-    static File comicDir;
-    //static String savePath = ;
 
-    public ImgSaver(File dir, ImgSaverImpl imgSaver) {
+    public ImgSaver(ImgSaverImpl imgSaver) {
         imgSaverImpl = imgSaver;
-        comicDir = dir;
     }
 
-    public void saveImage(String imgCod, String imgUrl) {
+    public void saveImage(File comicDir, String imgCod, String imgUrl) {
         try {
             URL url = new URL(imgUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();

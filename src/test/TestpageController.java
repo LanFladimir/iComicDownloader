@@ -20,40 +20,44 @@ public class TestpageController {
     @FXML
     private Button test_errorimg;
 
-    String errorImgSite = "";
+    String errorImgSite = "http://p1.manhuapan.com/2015/08/2414324714.jpg";
 
     /**
      * 测试错误照片
-     * @param event
      */
     @FXML
     void testErrorimg(ActionEvent event) {
-        try {
-            //save img
-            URL url = new URL(errorImgSite);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            InputStream imgInp = connection.getInputStream();
-            File img = new File( "error.jpeg");
-            FileOutputStream imgOut = new FileOutputStream(img);
+        new Thread(() -> {
+            try {
+                //save img
+                URL url = new URL(errorImgSite);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                InputStream imgInp = connection.getInputStream();
+                File img = new File("error.jpeg");
+                FileOutputStream imgOut = new FileOutputStream(img);
 
-            byte[] bytes = new byte[1024 * 100];
-            int readLength;
-            while ((readLength = imgInp.read(bytes)) != -1) {
-                imgOut.write(bytes, 0, readLength);
+                byte[] bytes = new byte[1024 * 100];
+                int readLength;
+                while ((readLength = imgInp.read(bytes)) != -1) {
+                    imgOut.write(bytes, 0, readLength);
+                }
+                imgInp.close();
+                imgOut.close();
+
+                //转换
+                try {
+                    Image image = ImageIO.read(img);
+                    image.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("疑似异常图片");
+
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            imgInp.close();
-            imgOut.close();
-
-            //转换
-            //BitmapFactoty
-            Image image;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-
+        }).start();
     }
 
 }
