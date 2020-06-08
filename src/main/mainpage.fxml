@@ -15,5 +15,6 @@
       <TextField fx:id="view_website" layoutX="86.0" layoutY="32.0" prefHeight="27.0" prefWidth="400.0" promptText="http://https://www.omyschool.com/..." />
       <TextArea fx:id="view_infos" layoutX="86.0" layoutY="100.0" prefHeight="244.0" prefWidth="400.0" />
       <Button fx:id="view_download" layoutX="558.0" layoutY="32.0" mnemonicParsing="false" onAction="#download" text="下载" />
+      <TextField fx:id="view_maxstep" layoutX="498.0" layoutY="77.0" prefHeight="15.0" prefWidth="99.0" promptText="20" visible="false" text="2"/>
    </children>
 </AnchorPane>
