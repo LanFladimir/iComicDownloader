@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/THB/THB.iml" filepath="$PROJECT_DIR$/THB/THB.iml" />
       <module fileurl="file://$PROJECT_DIR$/iComicThief_FX.iml" filepath="$PROJECT_DIR$/iComicThief_FX.iml" />
     </modules>
   </component>

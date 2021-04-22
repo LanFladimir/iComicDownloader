@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
-   <children>
-      <Label layoutX="15.0" layoutY="37.0" text="网络地址: " />
-      <Button fx:id="view_check" layoutX="500.0" layoutY="32.0" mnemonicParsing="false" onAction="#check" text="解析" />
-      <TextField fx:id="view_website" layoutX="86.0" layoutY="32.0" prefHeight="27.0" prefWidth="400.0" promptText="http://https://www.omyschool.com/..." />
-      <TextArea fx:id="view_infos" layoutX="86.0" layoutY="100.0" prefHeight="244.0" prefWidth="400.0" />
-      <Button fx:id="view_download" layoutX="558.0" layoutY="32.0" mnemonicParsing="false" onAction="#download" text="下载" />
-      <TextField fx:id="view_maxstep" layoutX="498.0" layoutY="77.0" prefHeight="15.0" prefWidth="99.0" promptText="20" visible="false" text="2"/>
-   </children>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+    <Label layoutX="15.0" layoutY="37.0" text="网络地址: "/>
+    <Button fx:id="view_check" layoutX="500.0" layoutY="32.0" mnemonicParsing="false"
+            onAction="#check" text="解析"/>
+    <TextField fx:id="view_website" layoutX="86.0" layoutY="32.0" prefHeight="27.0"
+               prefWidth="400.0" promptText="https://www.omyschool.com/..."/>
+    <TextArea fx:id="view_infos" layoutX="86.0" layoutY="100.0" prefHeight="244.0"
+              prefWidth="400.0"/>
+    <Button fx:id="view_download" layoutX="558.0" layoutY="32.0" mnemonicParsing="false"
+            onAction="#download" text="下载"/>
+    <TextField fx:id="view_maxstep" layoutX="498.0" layoutY="77.0" prefHeight="15.0"
+               prefWidth="99.0" promptText="20" visible="false" text="2"/>
 </AnchorPane>
